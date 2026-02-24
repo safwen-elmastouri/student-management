@@ -9,12 +9,14 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.5</version>
+        <relativePath/>
     </parent>
 
     <groupId>tn.esprit</groupId>
     <artifactId>student-management</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>student-management</name>
+    <description>Student Management Application</description>
 
     <properties>
         <java.version>17</java.version>
@@ -22,7 +24,7 @@
 
     <dependencies>
 
-        <!-- Web -->
+        <!-- WEB -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -34,21 +36,21 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- MySQL (Production) -->
+        <!-- MYSQL (Production runtime) -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- H2 (Tests CI Jenkins) -->
+        <!-- H2 (For Jenkins / Tests only) -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Lombok -->
+        <!-- LOMBOK -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -56,14 +58,14 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Tests -->
+        <!-- TESTS -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Swagger -->
+        <!-- SWAGGER / OPENAPI -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -74,10 +76,13 @@
 
     <build>
         <plugins>
+
+            <!-- Spring Boot Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
         </plugins>
     </build>
 
