@@ -20,6 +20,13 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
+        stage('Deploy to Kubernetes') {
+    steps {
+        withCredentials([file(credentialsId: 'kubeconfig-devops', variable: 'KUBECONFIG')]) {
+            sh 'kubectl apply -f k8s/'
+        }
+    }
+}
         stage('SONARQUBE') {
         environment {
             SONAR_HOST_URL = 'http://192.168.33.10:9000/'
